@@ -1,0 +1,485 @@
+<title>Una Mamá con Propósito</title>
+<style>
+:root {
+  --bg:      #FBF6F1;
+  --surface: #F2EBE4;
+  --card:    #FFFFFF;
+  --text-h:  #3D3330;
+  --text:    #7A6E6A;
+  --muted:   #A89E9A;
+  --border:  rgba(61,51,48,.09);
+  --salmon:  #C96B5A;
+  --gold:    #C9901A;
+  --sd:      rgba(201,107,90,.10);
+  --gd:      rgba(201,144,26,.10);
+  --rose:    #C23B6E;
+  --rd:      rgba(194,59,110,.10);
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#221C19;--surface:#2E2522;--card:#382E2A;
+  --text-h:#F5EDE8;--text:#BFB0A8;--muted:#7A6E68;
+  --border:rgba(245,237,232,.09);
+}}
+:root[data-theme=dark]{--bg:#221C19;--surface:#2E2522;--card:#382E2A;--text-h:#F5EDE8;--text:#BFB0A8;--muted:#7A6E68;--border:rgba(245,237,232,.09);}
+:root[data-theme=light]{--bg:#FBF6F1;--surface:#F2EBE4;--card:#FFFFFF;--text-h:#3D3330;--text:#7A6E6A;--muted:#A89E9A;--border:rgba(61,51,48,.09);}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ── NAV ─────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 52px;
+  background:rgba(251,246,241,.93);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo svg{height:40px;width:auto;}
+.nav-links{display:flex;gap:5px;}
+.nav-link{padding:7px 16px;border-radius:50px;border:1.5px solid var(--border);font-size:12px;font-weight:600;color:var(--text);text-decoration:none;transition:all .15s;}
+.nav-link:hover{border-color:var(--salmon);color:var(--salmon);}
+.nav-link.dim{opacity:.4;pointer-events:none;}
+
+/* ── PROMO BANNER ────────────────────── */
+.promo-bar{
+  background:var(--salmon);color:#fff;
+  text-align:center;padding:10px 24px;
+  font-size:13px;font-weight:600;letter-spacing:.01em;
+}
+.promo-bar span{opacity:.8;}
+
+/* ── HERO ────────────────────────────── */
+.hero{
+  padding:72px 52px 64px;
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.hero-left{}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--salmon);margin-bottom:22px;
+}
+.hero-eyebrow-bar{width:26px;height:1.5px;background:var(--salmon);}
+
+.hero-title{
+  font-size:clamp(38px,4.5vw,54px);
+  font-weight:900;letter-spacing:-.03em;line-height:1.06;
+  color:var(--text-h);margin-bottom:20px;text-wrap:balance;
+}
+.hero-title .accent{color:var(--salmon);}
+
+.hero-body{font-size:15.5px;color:var(--text);line-height:1.82;max-width:440px;margin-bottom:32px;}
+
+.hero-free{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gd);color:var(--gold);
+  font-size:12px;font-weight:700;letter-spacing:.05em;
+  padding:8px 18px;border-radius:50px;margin-bottom:28px;
+  border:1px solid rgba(201,144,26,.2);
+}
+
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  padding:13px 26px;border-radius:50px;
+  background:var(--salmon);color:#fff;
+  font-size:14px;font-weight:700;font-family:inherit;
+  border:none;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:opacity .15s,transform .15s;
+}
+.btn-primary:hover{opacity:.88;transform:translateY(-2px);}
+.btn-secondary{
+  padding:12px 22px;border-radius:50px;
+  background:transparent;color:var(--text-h);
+  font-size:14px;font-weight:600;font-family:inherit;
+  border:1.5px solid var(--border);cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .15s,color .15s;
+}
+.btn-secondary:hover{border-color:var(--salmon);color:var(--salmon);}
+
+/* HERO RIGHT — founder visual */
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px;}
+
+.founder-circle{
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(ellipse at center, rgba(201,107,90,.18) 0%, rgba(201,144,26,.08) 60%, transparent 100%);
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+}
+
+/* photo placeholder */
+.founder-photo-wrap{
+  width:280px;height:360px;border-radius:24px;
+  background:var(--surface);border:2px dashed var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;position:relative;z-index:2;overflow:hidden;
+}
+.founder-photo-wrap img{width:100%;height:100%;object-fit:cover;border-radius:22px;display:block;}
+.photo-placeholder-label{
+  font-size:12px;color:var(--muted);font-weight:500;
+  text-align:center;padding:0 16px;line-height:1.5;
+}
+
+/* floating app pills */
+.app-float{
+  position:absolute;z-index:3;
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:14px;padding:8px 14px;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  font-size:12px;font-weight:700;color:var(--text-h);
+  white-space:nowrap;
+}
+.af-icon{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+
+.af-academy{top:10%;left:-5%;}
+.af-ceo{bottom:20%;left:-8%;}
+.af-creanautas{top:8%;right:-5%;}
+
+/* pulse animation on floats */
+@keyframes floatup{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.af-academy{animation:floatup 4s ease-in-out infinite;}
+.af-ceo{animation:floatup 4s ease-in-out infinite;animation-delay:1.3s;}
+.af-creanautas{animation:floatup 4s ease-in-out infinite;animation-delay:.7s;}
+
+/* ── PILLARS ─────────────────────────── */
+.pillars{
+  background:var(--surface);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:52px;
+}
+.pillars-inner{max-width:1120px;margin:0 auto;}
+.pillars-title{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:32px;}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.pillar-card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:20px;padding:28px 24px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+}
+.pillar-icon-wrap{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.pillar-name{font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--text-h);}
+.pillar-desc{font-size:13.5px;color:var(--text);line-height:1.7;}
+
+/* ── APPS ────────────────────────────── */
+.apps-section{padding:72px 52px;max-width:1120px;margin:0 auto;}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--salmon);margin-bottom:10px;}
+.section-title{font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.03em;color:var(--text-h);line-height:1.15;margin-bottom:8px;}
+.section-sub{font-size:15px;color:var(--text);line-height:1.75;max-width:500px;margin-bottom:44px;}
+
+.apps-list{display:flex;flex-direction:column;gap:14px;}
+.app-row{
+  background:var(--card);border:1.5px solid var(--border);border-radius:22px;
+  display:grid;grid-template-columns:1fr 200px;
+  overflow:hidden;
+  transition:box-shadow .22s,border-color .22s;
+}
+.app-row.clickable:hover{box-shadow:0 10px 30px rgba(0,0,0,.07);border-color:var(--ra);}
+.app-body{padding:30px 34px;}
+.app-side{
+  background:color-mix(in srgb,var(--ra) 7%,transparent);
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px 20px;gap:12px;text-align:center;
+}
+
+.app-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.atag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:color-mix(in srgb,var(--ra) 12%,transparent);color:var(--ra);}
+
+.app-name{font-size:22px;font-weight:900;letter-spacing:-.025em;color:var(--text-h);margin-bottom:6px;}
+.app-tagline{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ra);margin-bottom:12px;}
+.app-desc{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:18px;max-width:520px;}
+
+.app-feats{display:flex;flex-direction:column;gap:7px;margin-bottom:22px;}
+.app-feat{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--text-h);font-weight:500;}
+.feat-check{width:18px;height:18px;border-radius:50%;background:color-mix(in srgb,var(--ra) 12%,transparent);color:var(--ra);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0;}
+
+.app-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:50px;font-size:13px;font-weight:700;font-family:inherit;background:var(--ra);color:#fff;border:none;cursor:pointer;text-decoration:none;transition:opacity .15s,transform .15s;}
+.app-cta:hover{opacity:.88;transform:translateY(-1px);}
+.app-cta.off{background:var(--surface);color:var(--muted);pointer-events:none;}
+
+.side-num{font-size:40px;font-weight:900;letter-spacing:-.04em;color:var(--ra);line-height:1;}
+.side-lbl{font-size:11px;color:var(--text);line-height:1.5;}
+.side-badge{font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 13px;border-radius:50px;background:color-mix(in srgb,var(--ra) 12%,transparent);color:var(--ra);}
+.free-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:50px;background:var(--gd);color:var(--gold);}
+
+/* ── CLOSING ─────────────────────────── */
+.closing{padding:72px 52px;text-align:center;}
+.closing-inner{max-width:580px;margin:0 auto;}
+.closing-title{font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.03em;color:var(--text-h);line-height:1.2;text-wrap:balance;margin-bottom:14px;}
+.closing-title .accent{color:var(--salmon);}
+.closing-body{font-size:15px;color:var(--text);line-height:1.8;margin-bottom:32px;}
+.closing-free{font-size:13px;color:var(--muted);margin-top:14px;}
+.closing-ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ──────────────────────────── */
+.footer-wrap{border-top:1px solid var(--border);padding:28px 52px 36px;}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-nav{display:flex;gap:20px;}
+.footer-nav a{font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;transition:color .15s;}
+.footer-nav a:hover{color:var(--text-h);}
+.footer-copy{font-size:11px;color:var(--muted);width:100%;margin-top:10px;padding-top:12px;border-top:1px solid var(--border);}
+
+/* ── REVEAL ──────────────────────────── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s,transform .55s;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:900px){
+  nav{padding:14px 20px;} .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;gap:36px;padding:56px 24px 48px;}
+  .hero-right{min-height:300px;}
+  .founder-circle{width:260px;height:260px;}
+  .founder-photo-wrap{width:220px;height:300px;}
+  .pillars{padding:40px 24px;} .pillars-grid{grid-template-columns:1fr;gap:12px;}
+  .apps-section{padding:52px 24px;}
+  .app-row{grid-template-columns:1fr;}
+  .app-side{flex-direction:row;justify-content:flex-start;border-left:none;border-top:1px solid var(--border);}
+  .closing{padding:52px 24px;}
+  .footer-wrap{padding:24px;}
+}
+@media(max-width:500px){
+  .hero-ctas{flex-direction:column;}
+  .btn-primary,.btn-secondary{width:100%;max-width:280px;justify-content:center;}
+  .closing-ctas{flex-direction:column;align-items:center;}
+}
+@media(prefers-reduced-motion:reduce){
+  .af-academy,.af-ceo,.af-creanautas{animation:none;}
+  .reveal,.btn-primary,.app-cta{transition:none;opacity:1;transform:none;}
+}
+</style>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  ✨ Las 3 apps disponibles para probar gratis por 14 días — sin tarjeta de crédito &nbsp;<span>· Cancela cuando quieras</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="./images/logo.png" alt="Una Mamá con Propósito" style="height:44px;width:auto;">
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="https://www.umpacademy.co" target="_blank">UMP Academy</a>
+    <a class="nav-link" href="https://www.mamaceoapp.co" target="_blank">Mamá CEO</a>
+    <a class="nav-link dim">Creanautas</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow"><span class="hero-eyebrow-bar"></span>El ecosistema para mamás con propósito</p>
+    <h1 class="hero-title">
+      Tu fe, tu familia<br>
+      y tu negocio.<br>
+      <span class="accent">Todo a la vez.</span>
+    </h1>
+    <p class="hero-body">
+      No tienes que elegir entre ser mamá fulltime y construir tu independencia.
+      Aquí está la ruta, las herramientas y la comunidad para que crezcas en tu fe,
+      estés presente para tus hijos y construyas un negocio real — sin hacerlo sola.
+    </p>
+    <div class="hero-free">✨ 14 días gratis en todas las apps · Sin tarjeta</div>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://www.umpacademy.co" target="_blank">
+        Empezar mi ruta gratis
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a class="btn-secondary" href="#apps">Ver las apps</a>
+    </div>
+  </div>
+
+  <!-- FOUNDER VISUAL -->
+  <div class="hero-right">
+    <div class="founder-circle"></div>
+
+    <img src="./images/banner.png" alt="Stephanny Manrique con las apps" style="width:280px;height:360px;object-fit:cover;border-radius:24px;position:relative;z-index:2;">
+
+    <!-- Floating app labels -->
+    <div class="app-float af-academy">
+      <div class="af-icon" style="background:rgba(201,107,90,.12);">🎓</div>
+      UMP Academy
+    </div>
+    <div class="app-float af-ceo">
+      <div class="af-icon" style="background:rgba(194,59,110,.12);">📊</div>
+      Mamá CEO
+    </div>
+    <div class="app-float af-creanautas">
+      <div class="af-icon" style="background:rgba(201,144,26,.12);">🚀</div>
+      Creanautas
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<div class="pillars reveal">
+  <div class="pillars-inner">
+    <p class="pillars-title">Los tres pilares de tu propósito</p>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap" style="background:var(--gd);">🙏</div>
+        <p class="pillar-name" style="color:var(--gold);">Fe y propósito</p>
+        <p class="pillar-desc">Todo lo que construyes tiene su base en tu relación con Dios. Aquí crecen juntas tu vida espiritual y tu emprendimiento.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap" style="background:var(--sd);">🤱</div>
+        <p class="pillar-name" style="color:var(--salmon);">Maternidad presente</p>
+        <p class="pillar-desc">Ser mamá fulltime y emprendedora no son opuestos. Tienes herramientas para estar presente sin dejar de construir tu independencia.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap" style="background:rgba(90,138,106,.1);">🌱</div>
+        <p class="pillar-name" style="color:#5A8A6A;">Emprendimiento real</p>
+        <p class="pillar-desc">No buscamos atajos. Construimos negocios sólidos, con propósito, con una ruta clara y sostenibilidad real.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPS -->
+<section class="apps-section" id="apps">
+  <div class="reveal">
+    <p class="section-eyebrow">Las herramientas del ecosistema</p>
+    <h2 class="section-title">Tres apps, un camino.</h2>
+    <p class="section-sub">Cada app te acompaña en un área de tu vida. Las tres juntas forman la ruta completa hacia tu propósito.</p>
+  </div>
+
+  <div class="apps-list">
+
+    <!-- UMP Academy -->
+    <div class="app-row clickable reveal" style="--ra:#C96B5A;">
+      <div class="app-body">
+        <div class="app-tags"><span class="atag">🙏 Fe</span><span class="atag">🤱 Maternidad</span><span class="atag">🌱 Emprendimiento</span></div>
+        <p class="app-tagline">La ruta completa</p>
+        <h3 class="app-name">UMP Academy</h3>
+        <p class="app-desc">De empleada a dueña de tu negocio, sin dejar de ser una mamá presente. La Ruta UMP es el programa paso a paso que te lleva desde donde estás hasta la independencia real — con estructura, mentoría y una comunidad de mamás que caminan contigo.</p>
+        <div class="app-feats">
+          <div class="app-feat"><div class="feat-check">✓</div>La Ruta UMP: 5 fases de transformación real</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Mentoría 1 a 1 personalizada en tu proceso</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Comunidad privada de mamás emprendedoras</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Clases de fe, maternidad y negocio integradas</div>
+        </div>
+        <a class="app-cta" href="https://www.umpacademy.co" target="_blank">Empezar la Ruta gratis <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="app-side">
+        <div class="side-num">5</div>
+        <div class="side-lbl">fases en la<br>Ruta UMP</div>
+        <div class="side-badge">Disponible</div>
+        <div class="free-tag">14 días gratis</div>
+      </div>
+    </div>
+
+    <!-- Mamá CEO -->
+    <div class="app-row clickable reveal" style="--ra:#C23B6E;transition-delay:.08s;">
+      <div class="app-body">
+        <div class="app-tags"><span class="atag">🤱 Maternidad</span><span class="atag">🌱 Emprendimiento</span></div>
+        <p class="app-tagline">Tu negocio y tu hogar</p>
+        <h3 class="app-name">Mamá CEO</h3>
+        <p class="app-desc">Tu negocio, tu hogar y tu propósito, todo en un solo lugar. Cuando tienes claridad de tus números, tus clientes y tus prioridades del día, puedes ser CEO y ser mamá sin que ninguna de las dos sufra. Deja de sentirte abrumada.</p>
+        <div class="app-feats">
+          <div class="app-feat"><div class="feat-check">✓</div>Dashboard de ventas, clientes y metas</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Gestión del hogar integrada a tu rutina</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Hábitos, bienestar y seguimiento de metas</div>
+        </div>
+        <a class="app-cta" href="https://www.mamaceoapp.co" target="_blank" style="background:var(--ra);">Probar gratis — 14 días <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="app-side" style="background:color-mix(in srgb,#C23B6E 7%,transparent);">
+        <div class="side-num" style="color:#C23B6E;">14</div>
+        <div class="side-lbl">días gratis<br>sin tarjeta</div>
+        <div class="side-badge" style="background:rgba(194,59,110,.12);color:#C23B6E;">Disponible</div>
+      </div>
+    </div>
+
+    <!-- Creanautas -->
+    <div class="app-row reveal" style="--ra:#C9901A;transition-delay:.16s;">
+      <div class="app-body">
+        <div class="app-tags"><span class="atag">🤱 Maternidad</span><span class="atag">👦 Para tus hijos</span></div>
+        <p class="app-tagline">Para los pequeños del hogar</p>
+        <h3 class="app-name">Creanautas</h3>
+        <p class="app-desc">Porque ser mamá presente también es darles a tus hijos un espacio para crear e imaginar. Creanautas es la app para que los niños de mamás emprendedoras exploren su creatividad mientras tú construyes tu negocio — con tranquilidad y sin culpa.</p>
+        <div class="app-feats">
+          <div class="app-feat"><div class="feat-check">✓</div>Actividades creativas diseñadas por edades</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Proyectos guiados para aprender creando</div>
+          <div class="app-feat"><div class="feat-check">✓</div>Un espacio seguro y estimulante para tu hijo</div>
+        </div>
+        <span class="app-cta off">Próximamente</span>
+      </div>
+      <div class="app-side" style="background:rgba(201,144,26,.06);">
+        <div style="font-size:34px;">🚀</div>
+        <div class="side-lbl">En construcción<br>para tus hijos</div>
+        <div class="side-badge" style="background:rgba(201,144,26,.12);color:var(--gold);">Pronto</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div style="background:var(--surface);border-top:1px solid var(--border);">
+  <section class="closing reveal">
+    <div class="closing-inner">
+      <h2 class="closing-title">Tu ruta empieza<br><span class="accent">hoy, gratis.</span></h2>
+      <p class="closing-body">Miles de mamás ya están construyendo su negocio, siendo presentes con sus hijos y creciendo en su fe — al mismo tiempo. No tienes que hacerlo sola ni tienes que esperar.</p>
+      <div class="closing-ctas">
+        <a class="btn-primary" href="https://www.umpacademy.co" target="_blank">Entrar a UMP Academy</a>
+        <a class="btn-primary" href="https://www.mamaceoapp.co" target="_blank" style="background:var(--text-h);">Probar Mamá CEO</a>
+      </div>
+      <p class="closing-free">✨ 14 días gratis · Sin tarjeta de crédito · Cancela cuando quieras</p>
+    </div>
+  </section>
+</div>
+
+<!-- QR SECTION -->
+<div style="background:var(--surface);border-top:1px solid var(--border);padding:48px 52px;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--salmon);margin-bottom:10px;">Comparte el ecosistema</p>
+      <h3 style="font-size:22px;font-weight:900;letter-spacing:-.025em;color:var(--text-h);margin-bottom:10px;line-height:1.2;">Escanea y comparte<br>con otras mamás</h3>
+      <p style="font-size:14px;color:var(--text);line-height:1.7;max-width:380px;">Este código QR lleva directamente a <strong style="color:var(--text-h);">www.unamamaconproposito.com</strong> — compártelo en tus redes, historias o material impreso.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0;">
+      <div style="background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.06);">
+        <img src="data:image/png;base64,./images/qr.png"
+                          width="160" height="160" style="display:block;border-radius:8px;">
+      </div>
+      <p style="font-size:11px;color:var(--muted);text-align:center;font-weight:600;">www.unamamaconproposito.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-wrap">
+  <div class="footer-inner">
+    <div class="nav-logo">
+      <img src="./images/logo.png" alt="Una Mamá con Propósito" style="height:32px;width:auto;">
+    </div>
+    <nav class="footer-nav">
+      <a href="https://www.umpacademy.co" target="_blank">UMP Academy</a>
+      <a href="https://www.mamaceoapp.co" target="_blank">Mamá CEO</a>
+      <a href="#" style="opacity:.4;pointer-events:none;">Creanautas</a>
+    </nav>
+    <p class="footer-copy">© 2026 Una Mamá con Propósito by Stephanny Manrique · Hecho con amor en Colombia 🇨🇴</p>
+  </div>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// nav bg sync for dark mode
+const nav=document.querySelector('nav');
+const syncNav=()=>{
+  const dark=document.documentElement.dataset.theme==='dark'||(!document.documentElement.dataset.theme&&window.matchMedia('(prefers-color-scheme:dark)').matches);
+  nav.style.background=dark?'rgba(34,28,25,.93)':'rgba(251,246,241,.93)';
+};
+new MutationObserver(syncNav).observe(document.documentElement,{attributes:true});
+window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',syncNav);
+syncNav();
+</script>
