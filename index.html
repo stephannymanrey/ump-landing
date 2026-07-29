@@ -43,11 +43,20 @@ nav{
 
 /* ── PROMO BANNER ────────────────────── */
 .promo-bar{
-  background:var(--salmon);color:#fff;
-  text-align:center;padding:10px 24px;
-  font-size:13px;font-weight:600;letter-spacing:.01em;
+  background:var(--text-h);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;flex-wrap:wrap;
+  padding:14px 24px;
+  font-size:13.5px;font-weight:600;letter-spacing:.01em;
+  border-bottom:2px solid var(--salmon);
 }
-.promo-bar span{opacity:.8;}
+.promo-badge{
+  background:var(--salmon);color:#fff;
+  padding:4px 12px;border-radius:20px;
+  font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  white-space:nowrap;flex-shrink:0;
+}
+.promo-bar span{opacity:.75;font-weight:500;}
 
 /* ── HERO ────────────────────────────── */
 .hero{
@@ -172,15 +181,15 @@ nav{
 .section-title{font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.03em;color:var(--text-h);line-height:1.15;margin-bottom:8px;}
 .section-sub{font-size:15px;color:var(--text);line-height:1.75;max-width:500px;margin-bottom:44px;}
 
-.apps-list{display:flex;flex-direction:column;gap:14px;}
+.apps-list{display:flex;flex-direction:column;gap:28px;}
 .app-row{
   background:var(--card);border:1.5px solid var(--border);border-radius:22px;
-  display:grid;grid-template-columns:1fr 200px;
+  display:grid;grid-template-columns:1fr 220px;
   overflow:hidden;
   transition:box-shadow .22s,border-color .22s;
 }
 .app-row.clickable:hover{box-shadow:0 10px 30px rgba(0,0,0,.07);border-color:var(--ra);}
-.app-body{padding:30px 34px;}
+.app-body{padding:38px 42px;}
 .app-side{
   background:color-mix(in srgb,var(--ra) 7%,transparent);
   border-left:1px solid var(--border);
@@ -256,7 +265,9 @@ nav{
 
 <!-- PROMO BAR -->
 <div class="promo-bar">
-  ✨ Las 3 apps disponibles para probar gratis por 14 días — sin tarjeta de crédito &nbsp;<span>· Cancela cuando quieras</span>
+  <span class="promo-badge">🔥 Prueba gratis</span>
+  Las 3 apps disponibles por <strong style="color:var(--salmon);">14 días gratis</strong> — sin tarjeta de crédito
+  <span>· Cancela cuando quieras · Sin compromisos</span>
 </div>
 
 <!-- NAV -->
@@ -301,19 +312,6 @@ nav{
 
     <img src="./images/banner.png" alt="Stephanny Manrique con las apps" style="width:280px;height:360px;object-fit:cover;border-radius:24px;position:relative;z-index:2;">
 
-    <!-- Floating app labels -->
-    <div class="app-float af-academy">
-      <div class="af-icon" style="background:rgba(201,107,90,.12);">🎓</div>
-      UMP Academy
-    </div>
-    <div class="app-float af-ceo">
-      <div class="af-icon" style="background:rgba(194,59,110,.12);">📊</div>
-      Mamá CEO
-    </div>
-    <div class="app-float af-creanautas">
-      <div class="af-icon" style="background:rgba(201,144,26,.12);">🚀</div>
-      Creanautas
-    </div>
   </div>
 </section>
 
