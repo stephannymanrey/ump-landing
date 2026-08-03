@@ -121,15 +121,19 @@ a{text-decoration:none;color:inherit}
 .section-header{text-align:center;margin-bottom:48px}
 .section-h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,3.4vw,46px);line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin:10px 0 12px;text-wrap:balance}
 .section-sub{font-size:15px;color:var(--ink-soft);line-height:1.82;max-width:450px;margin:0 auto}
-.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pillar-card{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--radius-card);padding:28px 24px;box-shadow:var(--shadow-card);transition:transform .25s,box-shadow .25s}
-.pillar-card:hover{transform:translateY(-5px);box-shadow:0 26px 50px rgba(30,42,58,.09)}
-.pillar-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
-.pillar-order{font-size:10px;font-weight:600;margin-bottom:4px;letter-spacing:.08em;text-transform:uppercase}
-.pillar-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:25px;letter-spacing:-.02em;margin-bottom:10px}
-.pillar-text{font-size:13px;color:var(--ink-soft);line-height:1.82}
-.pillar-bar{height:2px;border-radius:1px;margin-top:18px;opacity:.2;transition:opacity .25s}
-.pillar-card:hover .pillar-bar{opacity:.6}
+.pillars-bridge{display:flex;align-items:center;gap:16px;margin-bottom:48px}
+.pillars-bridge-line{flex:1;height:1px;background:var(--line)}
+.pillars-bridge-text{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden}
+.pillar-card{background:var(--cream-card);padding:clamp(28px,3.5vw,48px) clamp(22px,3vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:0;position:relative;overflow:hidden;transition:background .22s}
+.pillar-card:last-child{border-right:none}
+.pillar-card:hover{background:#fff}
+.pillar-card-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.pillar-answers{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:20px;opacity:.7}
+.pillar-icon{font-size:32px;line-height:1;margin-bottom:16px}
+.pillar-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.03em;line-height:1;margin-bottom:16px}
+.pillar-text{font-size:clamp(13px,1.1vw,14px);color:var(--ink-soft);line-height:1.85;flex:1}
+.pillar-text strong{color:var(--ink);font-weight:600}
 
 .ecosystem{background:#fff}
 .eco-h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,3.6vw,48px);line-height:1.07;letter-spacing:-.025em;color:var(--ink);max-width:560px;margin:10px 0 12px;text-wrap:balance}
@@ -311,6 +315,8 @@ details p{font-size:13px;color:var(--ink-soft);line-height:1.86;padding-bottom:1
 @media(max-width:768px){
   .nav-links{display:none}
   .pillars-grid,.ruta-timeline,.t-grid,.inc-grid{grid-template-columns:1fr}
+  .pillar-card{border-right:none;border-bottom:1px solid var(--line)}
+  .pillar-card:last-child{border-bottom:none}
   .ruta-timeline::before{display:none}
   .problem-grid{grid-template-columns:1fr}
   .problem-card-wide{grid-template-columns:1fr}
@@ -427,30 +433,35 @@ details p{font-size:13px;color:var(--ink-soft);line-height:1.86;padding-bottom:1
   <div class="container">
     <div class="section-header rv">
       <div class="eyebrow">La filosofía UMP</div>
-      <h2 class="section-h2">Tres pilares. Un propósito.</h2>
-      <p class="section-sub">No son áreas separadas de tu vida. Son un sistema integrado para que puedas vivirlo todo — a la vez.</p>
+      <h2 class="section-h2">La respuesta a<br>todo lo anterior.</h2>
+      <p class="section-sub">Cada cosa que reconociste arriba tiene aquí una respuesta. No son áreas separadas — son un sistema diseñado para que puedas vivirlo todo a la vez.</p>
+    </div>
+    <div class="pillars-bridge rv">
+      <div class="pillars-bridge-line"></div>
+      <div class="pillars-bridge-text">tres pilares · un propósito</div>
+      <div class="pillars-bridge-line"></div>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card rv" data-d="1">
-        <div class="pillar-icon" style="background:rgba(212,175,55,.12)">✝️</div>
-        <div class="pillar-order" style="color:var(--gold)">El fundamento</div>
+        <div class="pillar-card-accent" style="background:var(--gold)"></div>
+        <div class="pillar-answers">Para la que quiere propósito real</div>
+        <div class="pillar-icon">✝️</div>
         <div class="pillar-name" style="color:var(--gold)">Fe</div>
-        <div class="pillar-text">Un negocio construido sobre valores bíblicos no es más vulnerable. Es más sólido. La fe no es un extra — es la base de todo lo que construyes.</div>
-        <div class="pillar-bar" style="background:var(--gold)"></div>
+        <div class="pillar-text">Tu negocio no tiene que separarse de tus valores. Aquí la fe no es un extra — es la base. Lo que construyes se convierte en un acto de <strong>propósito con impacto eterno.</strong></div>
       </div>
       <div class="pillar-card rv" data-d="2">
-        <div class="pillar-icon" style="background:rgba(122,139,111,.12)">🤱</div>
-        <div class="pillar-order" style="color:var(--sage)">Tu mayor porqué</div>
+        <div class="pillar-card-accent" style="background:var(--sage)"></div>
+        <div class="pillar-answers">Para la que vive en culpa doble</div>
+        <div class="pillar-icon">🤱</div>
         <div class="pillar-name" style="color:var(--sage)">Familia</div>
-        <div class="pillar-text">Tu familia no es un obstáculo para tu negocio. Es tu mayor razón para hacerlo bien. Construir con ellos en mente cambia el tipo de negocio que decides crear.</div>
-        <div class="pillar-bar" style="background:var(--sage)"></div>
+        <div class="pillar-text">Tu familia no compite con tu negocio. Aquí aprendes a construir los dos al mismo tiempo, sin que ninguno pague el precio del otro. <strong>Tu hogar es parte del plan.</strong></div>
       </div>
       <div class="pillar-card rv" data-d="3">
-        <div class="pillar-icon" style="background:rgba(181,86,60,.10)">🌱</div>
-        <div class="pillar-order" style="color:var(--terracota)">Con propósito</div>
+        <div class="pillar-card-accent" style="background:var(--terracota)"></div>
+        <div class="pillar-answers">Para la que empieza y para</div>
+        <div class="pillar-icon">🌱</div>
         <div class="pillar-name" style="color:var(--terracota)">Negocio</div>
-        <div class="pillar-text">No necesitas trabajar más horas. Necesitas el sistema correcto. Un negocio sostenible que crezca sin sacrificar lo que más importa.</div>
-        <div class="pillar-bar" style="background:var(--terracota)"></div>
+        <div class="pillar-text">No necesitas más motivación ni más cursos. Necesitas <strong>el sistema correcto</strong> — construido desde la realidad de tu día, sin asumir que tienes horas libres ni ignorar que eres mamá primero.</div>
       </div>
     </div>
   </div>
