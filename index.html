@@ -376,6 +376,29 @@ details p{font-size:13px;color:var(--ink-soft);line-height:1.86;padding-bottom:1
 .rp-sub{font-size:11.5px;color:var(--ink-soft);margin:0 0 8px;line-height:1.5}
 .rp-outcome{font-size:11px;color:var(--terracota);font-style:italic;line-height:1.6;margin:0;border-top:1px solid var(--line);padding-top:8px}
 .ruta-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:16px;opacity:.65}
+
+.lc2-wrap{margin:36px 0 0}
+.lc2-mapa{position:relative;width:100%}
+.lc2-svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.lc2-punto{position:absolute;transform:translate(-50%,-50%)}
+.lc2-fase-lbl{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(181,86,60,.1);color:var(--terracota);font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;padding:3px 10px;border-radius:20px;letter-spacing:.04em}
+.lc2-pin{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:#fff;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(42,21,32,.08);transition:transform .18s,outline .15s}
+.lc2-pin:hover{transform:scale(1.1)}
+.lc2-pin.lc2-pin--abierto{outline:3px solid var(--terracota);outline-offset:2px;transform:scale(1.1)}
+.lc2-popover{position:absolute;bottom:calc(100% + 14px);left:50%;transform:translateX(-50%);width:220px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 14px 32px rgba(42,21,32,.14);z-index:10;animation:lc2aparece .18s ease}
+.lc2-popover::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#fff}
+.lc2-pop-izq{left:0;transform:none}
+.lc2-pop-izq::after{left:20px;transform:none}
+.lc2-pop-der{left:auto;right:0;transform:none}
+.lc2-pop-der::after{left:auto;right:20px;transform:none}
+.lc2-pop-fase{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--terracota);font-weight:600;margin:0 0 5px}
+.lc2-pop-titulo{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin:0 0 6px;line-height:1.3}
+.lc2-pop-texto{font-size:12px;line-height:1.6;color:var(--ink-soft);margin:0;opacity:.9}
+@keyframes lc2aparece{from{opacity:0;transform:translateY(6px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
+.lc2-pop-izq,.lc2-pop-der{animation:lc2aparece-f .18s ease}
+@keyframes lc2aparece-f{from{opacity:0}to{opacity:1}}
+.lc2-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:18px;opacity:.6}
+@media(max-width:540px){.lc2-pin{width:34px;height:34px;font-size:12px}.lc2-popover{width:min(200px,calc(100vw - 60px))}}
 </style>
 </head>
 <body>
@@ -649,89 +672,66 @@ details p{font-size:13px;color:var(--ink-soft);line-height:1.86;padding-bottom:1
       <h2 class="ruta-h2">La Ruta UMP</h2>
       <p class="ruta-sub-text">Cinco fases diseñadas para llevarte desde donde estás hasta donde Dios puso el sueño. Sin saltar pasos. Sin perder lo que más importa.</p>
     </div>
-    <div class="ruta-mapa-wrap" id="rutaMapa">
-  <svg class="ruta-mapa-svg" id="rutaSVG" viewBox="0 0 680 260"></svg>
+    <div class="lc2-wrap rv" data-d="1">
+  <div class="lc2-mapa" id="lc2Mapa" style="aspect-ratio:640/240">
+    <svg class="lc2-svg" id="lc2SVG" viewBox="0 0 640 240"></svg>
+  </div>
+  <p class="lc2-hint">&#127891; Toca cada unidad para ver qué logras en ella.</p>
 </div>
-<p class="ruta-hint">Toca cada etapa para ver en detalle qué logras.</p>
 <script>
 (function(){
-  var PASOS = [
-    {num:'01',nombre:'Despierta',sub:'Identidad y propósito',outcome:'Al terminar tienes claridad real sobre tu llamado — no una idea vaga, sino un propósito que puedes nombrar.',color:'#D4AF37',sombra:'rgba(212,175,55,.38)'},
-    {num:'02',nombre:'Ordena',sub:'Balance real',outcome:'Al terminar tienes una rutina real que sí puedes sostener, no una que solo funciona en el papel.',color:'#B5563C',sombra:'rgba(181,86,60,.35)'},
-    {num:'03',nombre:'Construye',sub:'Sistema y herramientas',outcome:'Al terminar tienes tu oferta clara y tu app configurada para trabajar por ti.',color:'#7A8B6F',sombra:'rgba(122,139,111,.35)'},
-    {num:'04',nombre:'Lanza',sub:'Primeros resultados',outcome:'Al terminar tienes la prueba de que esto es real — no en teoría, en tu cuenta bancaria.',color:'#D4687A',sombra:'rgba(212,104,122,.35)'},
-    {num:'05',nombre:'Escala',sub:'Impacto y legado',outcome:'Al terminar estás construyendo algo que va más allá de ti — de tú sola a un movimiento.',color:'#4A1208',sombra:'rgba(74,18,8,.3)'}
+  var E=[
+    {n:1,fase:'Fase 1',ft:'Propósito, capital y creación de producto',nom:'Propósito, Plan e Idea Inicial',txt:'Descubres tu propósito y aterrizas tu idea en un plan de negocio inicial.'},
+    {n:2,fase:'Fase 1',nom:'Generación de Capital',txt:'Formas de generar tus primeros ingresos como freelancer mientras construyes tu negocio.'},
+    {n:3,fase:'Fase 1',nom:'Creación y Venta de tu Producto',txt:'A crear tu mensaje de marketing, tus Lead Magnets y tu producto o servicio digital.'},
+    {n:4,fase:'Fase 2',ft:'Creación de contenido y Websites',nom:'Creación de Contenido',txt:'A planear, grabar, editar y automatizar tu contenido en redes sociales.'},
+    {n:5,fase:'Fase 2',nom:'Creación de tu Sitio Web',txt:'A crear tu landing page, página web o app — sin o con código de programación.'},
+    {n:6,fase:'Fase 3',ft:'Publicidad y Lanzamientos',nom:'Publicidad y Lanzamientos',txt:'Publicidad orgánica, pautas pagadas y cómo planear tu primer lanzamiento.'},
+    {n:7,fase:'Fase 3',nom:'Escalar y Liderar',txt:'A escalar tu negocio, armar tu equipo y estructurar ofertas high ticket.'}
   ];
-  // Positions [x%, y%] in viewBox 680x260 — snake: left→right row1, right→left row2
-  var POS = [
-    [100,80],  // 01
-    [290,80],  // 02
-    [480,80],  // 03
-    [580,180], // 04 — bend down-right
-    [200,180]  // 05
+  var POS=[
+    {x:70,y:60,col:0},
+    {x:237,y:60,col:1},
+    {x:403,y:60,col:2},
+    {x:570,y:60,col:3},
+    {x:570,y:190,col:3},
+    {x:403,y:190,col:2},
+    {x:237,y:190,col:1}
   ];
-  // Row label positions
-  var FASE_LABEL = ['Despierta','','','Escala tu impacto',''];
-
-  var wrap = document.getElementById('rutaMapa');
-  var svg  = document.getElementById('rutaSVG');
-  var abierto = null;
-
-  // Draw path
-  var pts = POS.map(function(p){return {x:p[0],y:p[1]};});
-  function pathD(pts){
-    var d = 'M '+pts[0].x+' '+pts[0].y;
-    for(var i=1;i<pts.length;i++){
-      var p0=pts[i-1],p1=pts[i];
-      var cx=p0.x+(p1.x-p0.x)/2;
-      d+=' C '+cx+' '+p0.y+','+cx+' '+p1.y+','+p1.x+' '+p1.y;
-    }
-    return d;
+  var svg=document.getElementById('lc2SVG');
+  var d='M '+POS[0].x+' '+POS[0].y;
+  for(var i=1;i<POS.length;i++){
+    var p0=POS[i-1],p1=POS[i],cx=p0.x+(p1.x-p0.x)/2;
+    d+=' C '+cx+' '+p0.y+','+cx+' '+p1.y+','+p1.x+' '+p1.y;
   }
-  var d = pathD(pts);
-  svg.innerHTML = '<path class="ruta-road" d="'+d+'"/><path class="ruta-road-line" d="'+d+'"/>';
-
-  // Create dots
-  PASOS.forEach(function(paso,i){
-    var pos = POS[i];
-    var el = document.createElement('div');
-    el.className = 'ruta-punto';
-    el.style.left = (pos[0]/680*100)+'%';
-    el.style.top  = (pos[1]/260*100)+'%';
-    el.id = 'rp'+i;
-
-    var isRight = pos[0] > 400;
-    var isBottom = pos[1] > 140;
-    var popoverPos = isBottom ? 'rp-arriba' : 'rp-abajo';
-    var popoverH   = isRight ? 'rp-izq' : '';
-
-    el.innerHTML =
-      '<button class="ruta-pin" id="rpb'+i+'" style="background:'+paso.color+';box-shadow:0 6px 20px '+paso.sombra+'" onclick="rutaToggle('+i+')">'+paso.num+'</button>'+
-      '<div class="ruta-popover '+popoverPos+' '+popoverH+'" id="rpp'+i+'">'+
-        '<div class="rp-fase-lbl" style="color:'+paso.color+'">Fase '+paso.num+'</div>'+
-        '<div class="rp-nombre">'+paso.nombre+'</div>'+
-        '<div class="rp-sub">'+paso.sub+'</div>'+
-        '<p class="rp-outcome">'+paso.outcome+'</p>'+
-      '</div>';
+  var road='<path fill="none" stroke="rgba(42,21,32,.1)" stroke-width="14" stroke-linecap="round" d="'+d+'"/>';
+  var dashes='<path fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="10 10" stroke-linecap="round" d="'+d+'"/>';
+  svg.innerHTML=road+dashes;
+  var wrap=document.getElementById('lc2Mapa'),ab=null;
+  E.forEach(function(e,i){
+    var pos=POS[i],prev=i>0?E[i-1]:null,isFirst=!prev||e.fase!==prev.fase;
+    var el=document.createElement('div');
+    el.className='lc2-punto';
+    el.style.left=(pos.x/640*100)+'%';
+    el.style.top=(pos.y/240*100)+'%';
+    var pc='lc2-popover'+(pos.col===0?' lc2-pop-izq':pos.col>=3?' lc2-pop-der':'');
+    var faseLabel=isFirst?'<span class="lc2-fase-lbl">'+e.fase+'</span>':'';
+    var popContent='<p class="lc2-pop-fase">'+e.fase+(e.ft?' · '+e.ft:'')+'</p>'
+      +'<h4 class="lc2-pop-titulo">'+e.nom+'</h4>'
+      +'<p class="lc2-pop-texto">&#127891; '+e.txt+'</p>';
+    el.innerHTML=faseLabel
+      +'<button class="lc2-pin" id="lc2b'+i+'" onclick="lc2T('+i+')">'+e.n+'</button>'
+      +'<div class="'+pc+'" id="lc2p'+i+'" style="display:none">'+popContent+'</div>';
     wrap.appendChild(el);
   });
-
-  window.rutaToggle = function(i){
-    if(abierto !== null && abierto !== i){
-      document.getElementById('rpp'+abierto).classList.remove('rp-vis');
-      document.getElementById('rpb'+abierto).classList.remove('rp-abierto');
+  window.lc2T=function(i){
+    if(ab!==null&&ab!==i){
+      document.getElementById('lc2p'+ab).style.display='none';
+      document.getElementById('lc2b'+ab).classList.remove('lc2-pin--abierto');
     }
-    var pop = document.getElementById('rpp'+i);
-    var btn = document.getElementById('rpb'+i);
-    if(abierto === i){
-      pop.classList.remove('rp-vis');
-      btn.classList.remove('rp-abierto');
-      abierto = null;
-    } else {
-      pop.classList.add('rp-vis');
-      btn.classList.add('rp-abierto');
-      abierto = i;
-    }
+    var pop=document.getElementById('lc2p'+i),btn=document.getElementById('lc2b'+i);
+    if(ab===i){pop.style.display='none';btn.classList.remove('lc2-pin--abierto');ab=null;}
+    else{pop.style.display='block';btn.classList.add('lc2-pin--abierto');ab=i;}
   };
 })();
 </script>
