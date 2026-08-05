@@ -55,8 +55,8 @@ export default function RutaSection() {
           <p className="section-eyebrow">Tu camino</p>
           <h2 className="section-title mt-2">La Ruta UMP</h2>
           <p className="section-sub mt-4 max-w-xl">
-            Cinco fases diseñadas para llevarte exactamente desde donde estás
-            hasta donde Dios puso el sueño. Sin saltar pasos.
+            7 unidades diseñadas en 3 fases para llevarte desde donde estás
+            hasta donde Dios puso el sueño. Sin saltar pasos. Sin perder lo que más importa.
           </p>
         </motion.div>
 
