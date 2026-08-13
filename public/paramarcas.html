@@ -97,7 +97,7 @@ img{max-width:100%;display:block}
 .work-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 10px;color:#fff}
 .work-h2 em{color:var(--papaya);font-style:normal}
 .work-body{font-size:14px;color:rgba(255,255,255,.52);line-height:1.85;max-width:560px;margin-bottom:36px}
-.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.formats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:36px}
 .fmt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px}
 .fmt-emoji{font-size:28px;margin-bottom:12px}
 .fmt-name{font-weight:700;font-size:14px;color:#fff;margin-bottom:7px;line-height:1.2}
@@ -107,7 +107,7 @@ img{max-width:100%;display:block}
 .val-txt{font-size:12px;color:rgba(255,255,255,.58);line-height:1.65}
 
 /* CAMPAIGNS */
-.campaigns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.campaigns-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
 .camp-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
 .camp-card:hover{box-shadow:0 16px 40px rgba(30,42,58,.12);transform:translateY(-3px)}
 .camp-thumb{aspect-ratio:16/9;background:var(--terra-10);display:flex;align-items:center;justify-content:center;font-size:36px;overflow:hidden;position:relative}
@@ -148,9 +148,7 @@ img{max-width:100%;display:block}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
   .aud-grid{grid-template-columns:1fr}
-  .formats{grid-template-columns:1fr 1fr}
   .vals{grid-template-columns:1fr;gap:14px}
-  .campaigns-grid{grid-template-columns:1fr 1fr}
   .hero-kpis{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:640px){
@@ -272,6 +270,7 @@ img{max-width:100%;display:block}
       <div class="fmt"><div class="fmt-emoji">🎬</div><div class="fmt-name">Reels & TikToks</div><div class="fmt-desc">Videos cortos de 30–90 seg donde el producto aparece integrado en una escena real de mi día. Formato nativo para algoritmo en IG y TikTok.</div></div>
       <div class="fmt"><div class="fmt-emoji">📱</div><div class="fmt-name">Stories patrocinadas</div><div class="fmt-desc">Secuencia de stories con mención del producto, enlace al perfil o web de la marca y llamado a la acción. Alta visibilidad en 24 horas.</div></div>
       <div class="fmt"><div class="fmt-emoji">🎙️</div><div class="fmt-name">Talleres & eventos</div><div class="fmt-desc">Mención o patrocinio en talleres en vivo para mamás emprendedoras. Audiencia activa y calificada, ideal para posicionamiento en la comunidad UMP.</div></div>
+      <div class="fmt"><div class="fmt-emoji">🎧</div><div class="fmt-name">Podcast — invitada</div><div class="fmt-desc">Acepto invitaciones como invitada en podcasts de emprendimiento, maternidad, fe o negocios para mamás. Conversaciones reales y profundas con tu audiencia.</div></div>
     </div>
     <div class="vals">
       <div><div class="val-lbl">Autenticidad</div><div class="val-txt">Solo colaboro con marcas que yo misma usaría. Si no me convence, no lo publico.</div></div>
@@ -288,32 +287,48 @@ img{max-width:100%;display:block}
     <h2 class="h2">Ejemplos de <em>campaña</em></h2>
     <p class="sub">Así se ve una colaboración con Stephanny — auténtica, dentro de su vida real como mamá emprendedora.</p>
     <div class="campaigns-grid" id="campaigns">
-      <!-- Las tarjetas de campaña se agregan aquí cuando tengamos los links -->
       <div class="camp-card">
-        <div class="camp-thumb"><span class="camp-thumb-icon">🥛</span></div>
+        <div class="camp-thumb" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+          <svg class="camp-thumb-icon" width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
         <div class="camp-body">
-          <div class="camp-brand">Klim Snacks / Nestlé</div>
-          <div class="camp-title">Contenido de vida real con el producto en escena</div>
+          <div class="camp-brand">Instagram · Campaña</div>
+          <div class="camp-title">Contenido de vida real como mamá emprendedora</div>
           <div class="camp-format">Reel · Instagram</div>
-          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+          <a href="https://www.instagram.com/p/DSbQo7UCRcy/" target="_blank" rel="noopener" class="camp-link">Ver en Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
       </div>
       <div class="camp-card">
-        <div class="camp-thumb"><span class="camp-thumb-icon">🍰</span></div>
+        <div class="camp-thumb" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+          <svg class="camp-thumb-icon" width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
         <div class="camp-body">
-          <div class="camp-brand">Ramo</div>
-          <div class="camp-title">Integración natural en el día a día familiar</div>
-          <div class="camp-format">Reel · TikTok</div>
-          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+          <div class="camp-brand">Instagram · Campaña</div>
+          <div class="camp-title">Contenido de vida real como mamá emprendedora</div>
+          <div class="camp-format">Reel · Instagram</div>
+          <a href="https://www.instagram.com/p/DSgEkfoD_vA/" target="_blank" rel="noopener" class="camp-link">Ver en Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
       </div>
       <div class="camp-card">
-        <div class="camp-thumb"><span class="camp-thumb-icon">📖</span></div>
+        <div class="camp-thumb" style="background:#000">
+          <svg class="camp-thumb-icon" width="36" height="36" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+        </div>
         <div class="camp-body">
-          <div class="camp-brand">Editorial Unilit</div>
-          <div class="camp-title">Reseña de libro / biblia desde la fe y la maternidad</div>
-          <div class="camp-format">Reel · Instagram</div>
-          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+          <div class="camp-brand">TikTok · Campaña</div>
+          <div class="camp-title">Integración natural del producto en el día a día familiar</div>
+          <div class="camp-format">Video · TikTok</div>
+          <a href="https://www.tiktok.com/@stephannymanrey/video/7665369840550530311" target="_blank" rel="noopener" class="camp-link">Ver en TikTok <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </div>
+      </div>
+      <div class="camp-card">
+        <div class="camp-thumb" style="background:#000">
+          <svg class="camp-thumb-icon" width="36" height="36" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+        </div>
+        <div class="camp-body">
+          <div class="camp-brand">TikTok · Campaña</div>
+          <div class="camp-title">Integración natural del producto en el día a día familiar</div>
+          <div class="camp-format">Video · TikTok</div>
+          <a href="https://www.tiktok.com/@stephannymanrey/video/7637909923216624903" target="_blank" rel="noopener" class="camp-link">Ver en TikTok <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </div>
       </div>
     </div>
@@ -348,7 +363,7 @@ img{max-width:100%;display:block}
         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.875L0 24l6.313-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.636-.49-5.153-1.346l-.369-.217-3.746.896.934-3.624-.24-.379A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Escribirle a Stephanny
       </a>
-      <p class="cta-note">También puedes escribir a <span class="cta-email">ysmanrei21@gmail.com</span><br>Respondemos todas las propuestas en menos de 48 horas.</p>
+      <p class="cta-note">También puedes escribir a <span class="cta-email">ysmanrei21@gmail.com</span><br>Respondemos todas las propuestas en menos de 48 horas.<br><strong style="color:var(--ink)">Facturamos como persona jurídica.</strong></p>
     </div>
   </div>
 </section>
