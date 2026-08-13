@@ -4,22 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Marcas — Una Mamá con Propósito</title>
-<meta name="description" content="Media kit de Stephanny Manrique, creadora de contenido para mamás emprendedoras en Latinoamérica. Colaboraciones auténticas en Instagram, TikTok y YouTube.">
+<meta name="description" content="Media kit de Stephanny Manrique, creadora de contenido para mamás emprendedoras en Latinoamérica.">
 <link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#FFFAF4;--cream-card:#fff;
+  --cream:#FFFAF4;
   --ink:#3A3742;--ink-soft:#695A4A;
   --terracota:#BF573C;--terra-dark:#9F4830;--terra-10:rgba(191,87,60,.10);
-  --coral:#F08A6C;--papaya:#EFA576;
-  --gold:#D4A23C;--sage:#5FA777;
+  --papaya:#EFA576;--sage:#5FA777;--gold:#D4A23C;
   --line:#E6DFD3;
-  --shadow-card:0 20px 48px rgba(30,42,58,.07);
-  --px:clamp(20px,5vw,72px);--py:clamp(56px,7vw,104px);
-  --radius:16px;--radius-pill:100px;
+  --shadow:0 20px 48px rgba(30,42,58,.07);
+  --px:clamp(18px,5vw,72px);--py:clamp(48px,7vw,96px);
+  --r:16px;--rpill:100px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -27,128 +26,149 @@ body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
-/* ── NAV ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 var(--px);display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--ink);letter-spacing:-.02em}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;padding:0 var(--px);display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,250,244,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--ink);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .nav-logo span{color:var(--terracota)}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--ink-soft);transition:color .15s}
-.nav-back:hover{color:var(--terracota)}
-.nav-back svg{width:14px;height:14px}
+.nav-back{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--terracota);border:1.5px solid var(--terracota);padding:6px 14px;border-radius:var(--rpill);transition:background .15s,color .15s;white-space:nowrap}
+.nav-back:hover{background:var(--terracota);color:#fff}
+.nav-back svg{width:13px;height:13px;flex-shrink:0}
 
-/* ── SHARED ── */
+/* LAYOUT */
 .container{max-width:1100px;margin:0 auto;padding:0 var(--px)}
 .section{padding:var(--py) 0}
-.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:var(--radius-pill);background:var(--terra-10);color:var(--terracota);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-.section-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:14px 0 12px;color:var(--ink)}
-.section-h2 em{color:var(--terracota);font-style:normal}
-.section-sub{font-size:clamp(14px,1.2vw,16px);color:var(--ink-soft);line-height:1.82;max-width:560px}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:var(--radius-pill);background:#25D366;color:#fff;font-size:15px;font-weight:600;box-shadow:0 8px 28px rgba(37,211,102,.28);transition:opacity .18s,transform .18s}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:var(--rpill);background:var(--terra-10);color:var(--terracota);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 10px;color:var(--ink)}
+.h2 em{color:var(--terracota);font-style:normal}
+.sub{font-size:clamp(14px,1.2vw,15px);color:var(--ink-soft);line-height:1.82;max-width:540px}
+
+/* BUTTONS */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;border-radius:var(--rpill);background:#25D366;color:#fff;font-size:15px;font-weight:600;box-shadow:0 8px 28px rgba(37,211,102,.28);transition:opacity .18s,transform .18s}
 .btn-wa:hover{opacity:.9;transform:translateY(-2px)}
 .btn-wa svg{width:20px;height:20px;flex-shrink:0}
 
-/* ── HERO ── */
-.hero{background:var(--cream);padding-top:calc(64px + clamp(48px,6vw,80px));padding-bottom:clamp(48px,6vw,80px)}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.hero-tag{font-size:11px;font-weight:600;color:var(--terracota);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.hero-h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,58px);line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px;text-wrap:balance}
+/* HERO */
+.hero{background:var(--cream);padding-top:calc(60px + clamp(40px,6vw,72px));padding-bottom:clamp(40px,6vw,72px)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.hero-tag{font-size:10px;font-weight:700;color:var(--terracota);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.hero-h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,56px);line-height:1.06;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px;text-wrap:balance}
 .hero-h1 em{color:var(--terracota);font-style:normal}
-.hero-body{font-size:clamp(14px,1.2vw,15px);color:var(--ink-soft);line-height:1.85;margin-bottom:32px}
-.hero-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px}
-.hero-kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:0 4px 16px rgba(30,42,58,.05)}
-.hero-kpi-val{font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;line-height:1;color:var(--terracota);margin-bottom:5px}
-.hero-kpi-lbl{font-size:11px;color:var(--ink-soft);font-weight:500;line-height:1.4}
+.hero-body{font-size:14px;color:var(--ink-soft);line-height:1.85;margin-bottom:28px}
+.hero-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;box-shadow:0 4px 16px rgba(30,42,58,.05)}
+.kpi-val{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;line-height:1;color:var(--terracota);margin-bottom:4px}
+.kpi-lbl{font-size:10px;color:var(--ink-soft);font-weight:500;line-height:1.4}
 
-/* Platform cards */
-.platforms{display:flex;flex-direction:column;gap:12px}
-.platform{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow-card);transition:transform .18s}
-.platform:hover{transform:translateY(-2px)}
-.platform-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.platform-info{flex:1;min-width:0}
-.platform-name{font-weight:700;font-size:14px;color:var(--ink);line-height:1}
-.platform-handle{font-size:12px;color:var(--ink-soft);margin-top:3px}
-.platform-right{text-align:right;flex-shrink:0}
-.platform-followers{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;line-height:1;color:var(--ink)}
-.platform-followers-lbl{font-size:10px;color:var(--ink-soft);font-weight:500;margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+/* PLATFORM CARDS */
+.platforms{display:flex;flex-direction:column;gap:10px}
+.platform{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+.platform:hover{transform:translateY(-2px);box-shadow:0 24px 56px rgba(30,42,58,.11)}
+.p-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.p-info{flex:1;min-width:0}
+.p-name{font-weight:700;font-size:13px;color:var(--ink);line-height:1}
+.p-handle{font-size:11px;color:var(--ink-soft);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-right{text-align:right;flex-shrink:0}
+.p-val{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;line-height:1;color:var(--ink)}
+.p-lbl{font-size:9px;color:var(--ink-soft);font-weight:500;margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
 
-/* ── AUDIENCIA ── */
-.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.aud-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-card)}
-.aud-card-title{font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px;display:flex;align-items:center;gap:8px}
-.aud-card-title::before{content:'';display:block;width:3px;height:14px;border-radius:2px;background:var(--terracota)}
+/* AUDIENCE */
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.aud-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.aud-title{font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.aud-title::before{content:'';width:3px;height:13px;border-radius:2px;background:var(--terracota);flex-shrink:0}
+.gender-bar{border-radius:8px;overflow:hidden;height:13px;display:flex;margin-bottom:12px}
+.g-women{background:var(--terracota)}
+.g-men{background:rgba(58,55,66,.1);flex:1}
+.gender-row{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-soft)}
+.gender-hl{font-weight:700;color:var(--ink);font-size:14px}
+.divider{height:1px;background:var(--line);margin:18px 0}
+.age-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.age-lbl{font-size:11px;color:var(--ink-soft);width:50px;flex-shrink:0}
+.age-track{flex:1;height:7px;background:rgba(58,55,66,.07);border-radius:4px;overflow:hidden}
+.age-fill{height:100%;border-radius:4px;background:var(--terracota)}
+.age-pct{font-size:11px;font-weight:600;color:var(--ink);width:30px;text-align:right;flex-shrink:0}
+.ctags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.ctag{padding:6px 13px;border-radius:var(--rpill);background:var(--terra-10);color:var(--terracota);font-size:11px;font-weight:600}
+.ctag-hi{background:var(--terracota);color:#fff}
 
-/* Gender */
-.gender-bar-wrap{border-radius:8px;overflow:hidden;height:14px;display:flex;margin-bottom:14px}
-.gender-women{background:var(--terracota);display:flex;align-items:center;padding-left:8px}
-.gender-men{background:rgba(58,55,66,.12);flex:1}
-.gender-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-soft)}
-.gender-highlight{font-weight:700;color:var(--ink);font-size:14px}
-
-/* Age bars */
-.age-row{display:flex;align-items:center;gap:10px;margin-bottom:11px}
-.age-label{font-size:12px;color:var(--ink-soft);width:56px;flex-shrink:0}
-.age-bar-track{flex:1;height:8px;background:rgba(58,55,66,.07);border-radius:4px;overflow:hidden}
-.age-bar-fill{height:100%;border-radius:4px;background:var(--terracota);transition:width .6s ease}
-.age-pct{font-size:12px;font-weight:600;color:var(--ink);width:34px;text-align:right;flex-shrink:0}
-.age-note{font-size:11px;color:var(--ink-soft);margin-top:4px;font-style:italic}
-
-/* Country tags */
-.country-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.ctag{padding:7px 16px;border-radius:var(--radius-pill);background:var(--terra-10);color:var(--terracota);font-size:12px;font-weight:600}
-.ctag-main{background:var(--terracota);color:#fff}
-
-/* ── COMO TRABAJO (dark) ── */
-.work-section{background:var(--ink);padding:var(--py) 0;color:#fff}
-.work-section .eyebrow{background:rgba(255,255,255,.08);color:var(--papaya)}
-.work-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:14px 0 12px;color:#fff}
+/* HOW I WORK */
+.work{background:var(--ink);padding:var(--py) 0;color:#fff}
+.work .eyebrow{background:rgba(255,255,255,.08);color:var(--papaya)}
+.work-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 10px;color:#fff}
 .work-h2 em{color:var(--papaya);font-style:normal}
-.work-body{font-size:clamp(14px,1.2vw,15px);color:rgba(255,255,255,.55);line-height:1.85;max-width:560px;margin-bottom:40px}
-.formats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
-.format-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px}
-.format-emoji{font-size:30px;margin-bottom:14px}
-.format-name{font-weight:700;font-size:15px;color:#fff;margin-bottom:8px;line-height:1.2}
-.format-desc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.72}
-.values-strip{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.val-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:7px}
-.val-text{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65}
+.work-body{font-size:14px;color:rgba(255,255,255,.52);line-height:1.85;max-width:560px;margin-bottom:36px}
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.fmt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px}
+.fmt-emoji{font-size:28px;margin-bottom:12px}
+.fmt-name{font-weight:700;font-size:14px;color:#fff;margin-bottom:7px;line-height:1.2}
+.fmt-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.72}
+.vals{border-top:1px solid rgba(255,255,255,.07);padding-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.val-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:6px}
+.val-txt{font-size:12px;color:rgba(255,255,255,.58);line-height:1.65}
 
-/* ── MARCAS ── */
-.brands-section .section-sub{margin-bottom:36px}
-.brand-note{font-size:13px;color:var(--ink-soft);font-style:italic;margin-bottom:24px;line-height:1.7;max-width:600px;padding:16px 20px;border-left:3px solid var(--terracota);background:#fff;border-radius:0 8px 8px 0}
-.brands-grid{display:flex;flex-wrap:wrap;gap:12px}
-.brand-pill{display:flex;align-items:center;gap:9px;padding:11px 20px;border-radius:var(--radius-pill);background:#fff;border:1.5px solid var(--line);font-weight:600;font-size:14px;color:var(--ink);box-shadow:0 2px 8px rgba(30,42,58,.05);transition:border-color .15s,box-shadow .15s}
-.brand-pill:hover{border-color:var(--terracota);box-shadow:0 4px 16px rgba(191,87,60,.12)}
-.brand-dot{width:8px;height:8px;border-radius:50%;background:var(--terracota);flex-shrink:0}
-.brand-pill-cat{font-size:11px;color:var(--ink-soft);font-weight:400;display:block;margin-top:1px}
+/* CAMPAIGNS */
+.campaigns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.camp-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+.camp-card:hover{box-shadow:0 16px 40px rgba(30,42,58,.12);transform:translateY(-3px)}
+.camp-thumb{aspect-ratio:16/9;background:var(--terra-10);display:flex;align-items:center;justify-content:center;font-size:36px;overflow:hidden;position:relative}
+.camp-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.camp-thumb-icon{position:relative;z-index:1}
+.camp-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:6px}
+.camp-brand{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terracota)}
+.camp-title{font-weight:600;font-size:14px;color:var(--ink);line-height:1.35}
+.camp-format{font-size:11px;color:var(--ink-soft)}
+.camp-link{margin-top:auto;padding-top:12px;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--terracota)}
+.camp-link svg{width:12px;height:12px}
 
-/* ── CTA ── */
-.cta-section{padding:var(--py) 0;background:var(--cream)}
-.cta-inner{max-width:660px;margin:0 auto;text-align:center}
-.cta-inner .eyebrow{margin-bottom:16px}
-.cta-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;text-wrap:balance}
+/* BRANDS */
+.brand-note{font-size:13px;color:var(--ink-soft);font-style:italic;margin:20px 0 24px;line-height:1.7;max-width:580px;padding:14px 18px;border-left:3px solid var(--terracota);background:#fff;border-radius:0 8px 8px 0}
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brand-pill{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--rpill);background:#fff;border:1.5px solid var(--line);font-weight:600;font-size:13px;color:var(--ink);box-shadow:0 2px 8px rgba(30,42,58,.04);transition:border-color .15s,box-shadow .15s}
+.brand-pill:hover{border-color:var(--terracota);box-shadow:0 4px 16px rgba(191,87,60,.1)}
+.brand-dot{width:7px;height:7px;border-radius:50%;background:var(--terracota);flex-shrink:0}
+.brand-cat{font-size:10px;color:var(--ink-soft);font-weight:400;display:block;margin-top:1px}
+
+/* CTA */
+.cta-inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-inner .eyebrow{margin-bottom:14px}
+.cta-h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;text-wrap:balance}
 .cta-h2 em{color:var(--terracota);font-style:normal}
-.cta-body{font-size:15px;color:var(--ink-soft);line-height:1.82;margin-bottom:32px}
-.cta-note{font-size:12px;color:var(--ink-soft);margin-top:14px;line-height:1.6}
+.cta-body{font-size:14px;color:var(--ink-soft);line-height:1.82;margin-bottom:28px}
+.cta-note{font-size:11px;color:var(--ink-soft);margin-top:12px;line-height:1.6}
 .cta-email{font-weight:600;color:var(--terracota)}
 
-/* ── FOOTER ── */
-.footer-mini{padding:28px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.footer-mini-copy{font-size:12px;color:var(--ink-soft)}
-.footer-mini-back{font-size:12px;color:var(--terracota);font-weight:600}
-.footer-mini-back:hover{text-decoration:underline}
+/* FOOTER */
+.foot{padding:24px 0;border-top:1px solid var(--line)}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot-copy{font-size:11px;color:var(--ink-soft)}
+.foot-back{font-size:11px;color:var(--terracota);font-weight:600}
+.foot-back:hover{text-decoration:underline}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
-  .audience-grid{grid-template-columns:1fr}
-  .formats-grid{grid-template-columns:1fr 1fr}
-  .values-strip{grid-template-columns:1fr;gap:16px}
+  .aud-grid{grid-template-columns:1fr}
+  .formats{grid-template-columns:1fr 1fr}
+  .vals{grid-template-columns:1fr;gap:14px}
+  .campaigns-grid{grid-template-columns:1fr 1fr}
   .hero-kpis{grid-template-columns:repeat(3,1fr)}
 }
-@media(max-width:600px){
+@media(max-width:640px){
   .hero-kpis{grid-template-columns:1fr 1fr}
-  .formats-grid{grid-template-columns:1fr}
-  .platform{padding:16px}
-  .footer-mini{flex-direction:column;text-align:center}
+  .formats{grid-template-columns:1fr}
+  .campaigns-grid{grid-template-columns:1fr}
+  .aud-card{padding:18px}
+  .btn-wa{width:100%;font-size:14px;padding:14px 20px}
+  .nav-logo{font-size:11px}
+}
+@media(max-width:420px){
+  .hero-kpis{grid-template-columns:1fr}
+  .hero-h1{font-size:28px}
+  .platform{padding:14px 16px}
+  .p-val{font-size:19px}
+  .brands{gap:8px}
+  .brand-pill{font-size:12px;padding:8px 14px}
+  .foot-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
@@ -159,7 +179,7 @@ img{max-width:100%;display:block}
   <div class="nav-logo">UMP <span>·</span> Una Mamá con Propósito</div>
   <a href="/" class="nav-back">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Volver a la landing
+    Volver
   </a>
 </nav>
 
@@ -172,70 +192,35 @@ img{max-width:100%;display:block}
         <h1 class="hero-h1">Hola, marca.<br>Soy <em>Stephanny.</em></h1>
         <p class="hero-body">Creo contenido para mamás emprendedoras en Latinoamérica — desde la fe, la familia y el negocio real. Mi comunidad no es solo seguidores: son mamás que confían en lo que yo uso, como yo lo uso. Sin filtros, sin escenas montadas.</p>
         <div class="hero-kpis">
-          <div class="hero-kpi">
-            <div class="hero-kpi-val">27K+</div>
-            <div class="hero-kpi-lbl">Alcance total entre plataformas</div>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-val">77%</div>
-            <div class="hero-kpi-lbl">Audiencia femenina</div>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-val">LATAM</div>
-            <div class="hero-kpi-lbl">MX · CO · PE · CL y más</div>
-          </div>
+          <div class="kpi"><div class="kpi-val">27K+</div><div class="kpi-lbl">Alcance total entre plataformas</div></div>
+          <div class="kpi"><div class="kpi-val">77%</div><div class="kpi-lbl">Audiencia femenina</div></div>
+          <div class="kpi"><div class="kpi-val">LATAM</div><div class="kpi-lbl">MX · CO · PE · CL y más</div></div>
         </div>
-        <a href="https://wa.me/573213786731?text=Hola%20Stephanny%2C%20soy%20de%20[nombre%20de%20marca]%20y%20me%20gustar%C3%ADa%20explorar%20una%20colaboraci%C3%B3n%20contigo." target="_blank" class="btn-wa">
+        <a href="https://wa.me/573213786731?text=Hola%20Stephanny%2C%20soy%20de%20[nombre%20de%20marca]%20y%20me%20gustar%C3%ADa%20explorar%20una%20colaboraci%C3%B3n%20contigo." target="_blank" rel="noopener" class="btn-wa">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.875L0 24l6.313-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.636-.49-5.153-1.346l-.369-.217-3.746.896.934-3.624-.24-.379A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           Hablemos por WhatsApp
         </a>
       </div>
-
-      <!-- Platform cards -->
       <div class="platforms">
         <div class="platform">
-          <div class="platform-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">📸</div>
-          <div class="platform-info">
-            <div class="platform-name">Instagram</div>
-            <div class="platform-handle">@unamamaconproposito</div>
-          </div>
-          <div class="platform-right">
-            <div class="platform-followers">5.1K</div>
-            <div class="platform-followers-lbl">seguidoras</div>
-          </div>
+          <div class="p-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">📸</div>
+          <div class="p-info"><div class="p-name">Instagram</div><div class="p-handle">@unamamaconproposito</div></div>
+          <div class="p-right"><div class="p-val">5.1K</div><div class="p-lbl">seguidoras</div></div>
         </div>
         <div class="platform">
-          <div class="platform-icon" style="background:#000;color:#fff;font-size:20px">♪</div>
-          <div class="platform-info">
-            <div class="platform-name">TikTok</div>
-            <div class="platform-handle">@unamamaconproposito</div>
-          </div>
-          <div class="platform-right">
-            <div class="platform-followers" style="color:#EE1D52">15.4K</div>
-            <div class="platform-followers-lbl">seguidoras</div>
-          </div>
+          <div class="p-icon" style="background:#000;color:#fff">♪</div>
+          <div class="p-info"><div class="p-name">TikTok</div><div class="p-handle">@unamamaconproposito</div></div>
+          <div class="p-right"><div class="p-val" style="color:#EE1D52">15.4K</div><div class="p-lbl">seguidoras</div></div>
         </div>
         <div class="platform">
-          <div class="platform-icon" style="background:#FF0000">▶</div>
-          <div class="platform-info">
-            <div class="platform-name">YouTube</div>
-            <div class="platform-handle">Una Mamá con Propósito</div>
-          </div>
-          <div class="platform-right">
-            <div class="platform-followers" style="color:#FF0000">6.53K</div>
-            <div class="platform-followers-lbl">suscriptoras</div>
-          </div>
+          <div class="p-icon" style="background:#FF0000;color:#fff;font-size:16px">▶</div>
+          <div class="p-info"><div class="p-name">YouTube</div><div class="p-handle">Una Mamá con Propósito</div></div>
+          <div class="p-right"><div class="p-val" style="color:#FF0000">6.53K</div><div class="p-lbl">suscriptoras</div></div>
         </div>
-        <div class="platform" style="background:rgba(191,87,60,.04);border-color:rgba(191,87,60,.2)">
-          <div class="platform-icon" style="background:var(--terra-10);font-size:20px">📖</div>
-          <div class="platform-info">
-            <div class="platform-name">YouVersion</div>
-            <div class="platform-handle">Devocionales para mamás</div>
-          </div>
-          <div class="platform-right">
-            <div class="platform-followers" style="color:var(--terracota);font-size:18px">✦</div>
-            <div class="platform-followers-lbl">Fe integrada</div>
-          </div>
+        <div class="platform" style="background:rgba(191,87,60,.04);border-color:rgba(191,87,60,.18)">
+          <div class="p-icon" style="background:var(--terra-10)">📖</div>
+          <div class="p-info"><div class="p-name">YouVersion</div><div class="p-handle">Devocionales para mamás</div></div>
+          <div class="p-right"><div class="p-val" style="color:var(--terracota);font-size:18px">✦</div><div class="p-lbl">Fe integrada</div></div>
         </div>
       </div>
     </div>
@@ -245,55 +230,29 @@ img{max-width:100%;display:block}
 <!-- AUDIENCIA -->
 <section class="section" style="background:#fff">
   <div class="container">
-    <div style="margin-bottom:40px">
+    <div style="margin-bottom:36px">
       <span class="eyebrow">Mi comunidad</span>
-      <h2 class="section-h2">Una audiencia que <em>confía</em></h2>
-      <p class="section-sub">Mamás latinas entre 25 y 34 años, emprendedoras o con ganas de serlo, con fe y con hijos. Toman decisiones de compra basadas en lo que personas reales — como yo — recomiendan en su día a día.</p>
+      <h2 class="h2">Una audiencia que <em>confía</em></h2>
+      <p class="sub">Mamás latinas entre 25 y 34 años, emprendedoras o con ganas de serlo, con fe y con hijos. Toman decisiones de compra basadas en lo que personas reales recomiendan en su día a día.</p>
     </div>
-    <div class="audience-grid">
-      <!-- Género -->
+    <div class="aud-grid">
       <div class="aud-card">
-        <div class="aud-card-title">Género de la audiencia</div>
-        <div class="gender-bar-wrap">
-          <div class="gender-women" style="width:77%"></div>
-          <div class="gender-men"></div>
-        </div>
-        <div class="gender-labels">
-          <div><span class="gender-highlight">77%</span> Mujeres</div>
-          <div>22% Hombres</div>
-        </div>
-        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
-          <p style="font-size:12px;color:var(--ink-soft);line-height:1.7">Una audiencia predominantemente femenina — mamás que buscan referencias auténticas de mujeres que viven lo mismo que ellas.</p>
-        </div>
+        <div class="aud-title">Género de la audiencia</div>
+        <div class="gender-bar"><div class="g-women" style="width:77%"></div><div class="g-men"></div></div>
+        <div class="gender-row"><div><span class="gender-hl">77%</span> Mujeres</div><div>22% Hombres</div></div>
+        <div class="divider"></div>
+        <p style="font-size:12px;color:var(--ink-soft);line-height:1.7">Una audiencia predominantemente femenina — mamás que buscan referencias auténticas de mujeres que viven lo mismo que ellas.</p>
       </div>
-
-      <!-- Edades + países -->
       <div class="aud-card">
-        <div class="aud-card-title">Edades principales</div>
-        <div class="age-row">
-          <div class="age-label">18–24</div>
-          <div class="age-bar-track"><div class="age-bar-fill" style="width:18%"></div></div>
-          <div class="age-pct">18%</div>
-        </div>
-        <div class="age-row">
-          <div class="age-label" style="font-weight:700;color:var(--ink)">25–34</div>
-          <div class="age-bar-track"><div class="age-bar-fill" style="width:53%;background:var(--terracota)"></div></div>
-          <div class="age-pct" style="font-weight:700;color:var(--terracota)">53%</div>
-        </div>
-        <div class="age-row">
-          <div class="age-label">35–44</div>
-          <div class="age-bar-track"><div class="age-bar-fill" style="width:22%;opacity:.6"></div></div>
-          <div class="age-pct">22%</div>
-        </div>
-        <div class="age-row">
-          <div class="age-label">45+</div>
-          <div class="age-bar-track"><div class="age-bar-fill" style="width:7%;opacity:.35"></div></div>
-          <div class="age-pct">7%</div>
-        </div>
-        <div class="aud-card-title" style="margin-top:22px;margin-bottom:12px">Países top</div>
-        <div class="country-tags">
-          <span class="ctag ctag-main">🇲🇽 México</span>
-          <span class="ctag ctag-main">🇨🇴 Colombia</span>
+        <div class="aud-title">Edades principales</div>
+        <div class="age-row"><div class="age-lbl">18–24</div><div class="age-track"><div class="age-fill" style="width:18%"></div></div><div class="age-pct">18%</div></div>
+        <div class="age-row"><div class="age-lbl" style="font-weight:700;color:var(--ink)">25–34</div><div class="age-track"><div class="age-fill" style="width:53%"></div></div><div class="age-pct" style="color:var(--terracota);font-weight:700">53%</div></div>
+        <div class="age-row"><div class="age-lbl">35–44</div><div class="age-track"><div class="age-fill" style="width:22%;opacity:.6"></div></div><div class="age-pct">22%</div></div>
+        <div class="age-row"><div class="age-lbl">45+</div><div class="age-track"><div class="age-fill" style="width:7%;opacity:.3"></div></div><div class="age-pct">7%</div></div>
+        <div class="aud-title" style="margin-top:20px;margin-bottom:10px">Países top</div>
+        <div class="ctags">
+          <span class="ctag ctag-hi">🇲🇽 México</span>
+          <span class="ctag ctag-hi">🇨🇴 Colombia</span>
           <span class="ctag">🇵🇪 Perú</span>
           <span class="ctag">🇨🇱 Chile</span>
           <span class="ctag">+ LATAM</span>
@@ -303,43 +262,59 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- CÓMO TRABAJO CON MARCAS -->
-<section class="work-section">
+<!-- CÓMO TRABAJO -->
+<section class="work">
   <div class="container">
     <span class="eyebrow">Mi estilo</span>
     <h2 class="work-h2">Contenido <em>auténtico.</em><br>No publicidad disfrazada.</h2>
-    <p class="work-body">Cuando trabajo con una marca, la integro en mi vida real — mi cocina, mis mañanas, las actividades con mi hijo. No hago "unboxings forzados". El producto aparece porque forma parte del día a día, y mi comunidad lo siente. Mi hijo (12 años) puede participar en las escenas de forma natural — consumiendo o usando el producto, nunca vendiendo directamente.</p>
-
-    <div class="formats-grid">
-      <div class="format-card">
-        <div class="format-emoji">🎬</div>
-        <div class="format-name">Reels & TikToks</div>
-        <div class="format-desc">Videos cortos de 30–90 seg donde el producto aparece integrado en una escena real de mi día — cocina, rutina de mamá, emprendimiento. Formato nativo para algoritmo.</div>
-      </div>
-      <div class="format-card">
-        <div class="format-emoji">📱</div>
-        <div class="format-name">Stories patrocinadas</div>
-        <div class="format-desc">Secuencia de stories en Instagram con mención del producto, enlace a perfil o web de la marca, y llamado a la acción. Alta visibilidad en 24 horas.</div>
-      </div>
-      <div class="format-card">
-        <div class="format-emoji">🎙️</div>
-        <div class="format-name">Talleres & eventos</div>
-        <div class="format-desc">Mención o patrocinio en talleres en vivo para mamás emprendedoras. Audiencia activa y altamente calificada. Ideal para marcas que quieren posicionarse en la comunidad UMP.</div>
-      </div>
+    <p class="work-body">Cuando trabajo con una marca, la integro en mi vida real — mi cocina, mis mañanas, las actividades con mi hijo. No hago unboxings forzados. El producto aparece porque forma parte del día a día, y mi comunidad lo siente. Mi hijo (12 años) puede participar en las escenas de forma natural — usando o consumiendo el producto, nunca vendiendo directamente.</p>
+    <div class="formats">
+      <div class="fmt"><div class="fmt-emoji">🎬</div><div class="fmt-name">Reels & TikToks</div><div class="fmt-desc">Videos cortos de 30–90 seg donde el producto aparece integrado en una escena real de mi día. Formato nativo para algoritmo en IG y TikTok.</div></div>
+      <div class="fmt"><div class="fmt-emoji">📱</div><div class="fmt-name">Stories patrocinadas</div><div class="fmt-desc">Secuencia de stories con mención del producto, enlace al perfil o web de la marca y llamado a la acción. Alta visibilidad en 24 horas.</div></div>
+      <div class="fmt"><div class="fmt-emoji">🎙️</div><div class="fmt-name">Talleres & eventos</div><div class="fmt-desc">Mención o patrocinio en talleres en vivo para mamás emprendedoras. Audiencia activa y calificada, ideal para posicionamiento en la comunidad UMP.</div></div>
     </div>
+    <div class="vals">
+      <div><div class="val-lbl">Autenticidad</div><div class="val-txt">Solo colaboro con marcas que yo misma usaría. Si no me convence, no lo publico.</div></div>
+      <div><div class="val-lbl">Familia primero</div><div class="val-txt">Mi hijo puede aparecer de forma natural — parte de las escenas reales, nunca como vocero del producto.</div></div>
+      <div><div class="val-lbl">Propósito</div><div class="val-txt">Mi audiencia me sigue por la coherencia entre lo que digo y lo que vivo. Eso es lo que hace que una mención mía valga.</div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="values-strip">
-      <div>
-        <div class="val-label">Autenticidad</div>
-        <div class="val-text">Solo colaboro con marcas que yo misma usaría o que encajan con los valores de mi comunidad. Si no me convence, no lo publico.</div>
+<!-- EJEMPLOS DE CAMPAÑA -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <span class="eyebrow">Trabajo real</span>
+    <h2 class="h2">Ejemplos de <em>campaña</em></h2>
+    <p class="sub">Así se ve una colaboración con Stephanny — auténtica, dentro de su vida real como mamá emprendedora.</p>
+    <div class="campaigns-grid" id="campaigns">
+      <!-- Las tarjetas de campaña se agregan aquí cuando tengamos los links -->
+      <div class="camp-card">
+        <div class="camp-thumb"><span class="camp-thumb-icon">🥛</span></div>
+        <div class="camp-body">
+          <div class="camp-brand">Klim Snacks / Nestlé</div>
+          <div class="camp-title">Contenido de vida real con el producto en escena</div>
+          <div class="camp-format">Reel · Instagram</div>
+          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+        </div>
       </div>
-      <div>
-        <div class="val-label">Familia primero</div>
-        <div class="val-text">Mi hijo puede aparecer de forma natural. No es el vocero del producto — es parte de las escenas reales de nuestra vida.</div>
+      <div class="camp-card">
+        <div class="camp-thumb"><span class="camp-thumb-icon">🍰</span></div>
+        <div class="camp-body">
+          <div class="camp-brand">Ramo</div>
+          <div class="camp-title">Integración natural en el día a día familiar</div>
+          <div class="camp-format">Reel · TikTok</div>
+          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+        </div>
       </div>
-      <div>
-        <div class="val-label">Propósito</div>
-        <div class="val-text">Mi audiencia me sigue por la coherencia entre lo que digo y lo que vivo. Eso es lo que hace que una mención mía valga más que un anuncio.</div>
+      <div class="camp-card">
+        <div class="camp-thumb"><span class="camp-thumb-icon">📖</span></div>
+        <div class="camp-body">
+          <div class="camp-brand">Editorial Unilit</div>
+          <div class="camp-title">Reseña de libro / biblia desde la fe y la maternidad</div>
+          <div class="camp-format">Reel · Instagram</div>
+          <span class="camp-link" style="color:var(--ink-soft);cursor:default">Link próximamente</span>
+        </div>
       </div>
     </div>
   </div>
@@ -349,30 +324,27 @@ img{max-width:100%;display:block}
 <section class="section brands-section">
   <div class="container">
     <span class="eyebrow">Colaboraciones anteriores</span>
-    <h2 class="section-h2">Marcas que ya <em>confiaron</em> en mí</h2>
-    <p class="section-sub" style="margin-bottom:20px">Mayormente del sector alimenticio — marcas que encajan naturalmente en el contenido de mamá y cocina de familia.</p>
-    <div class="brand-note">
-      El tipo de contenido que más me buscan: productos de cocina y alimentación mostrados en el día a día de una mamá que trabaja desde casa. Mi hijo aparece consumiendo el producto de forma natural, lo que le da autenticidad y conexión real con otras familias.
-    </div>
-    <div class="brands-grid">
-      <div class="brand-pill"><span class="brand-dot"></span><span>Nestlé<span class="brand-pill-cat">Alimentos</span></span></div>
-      <div class="brand-pill"><span class="brand-dot"></span><span>Klim Snacks<span class="brand-pill-cat">Alimentos</span></span></div>
-      <div class="brand-pill"><span class="brand-dot"></span><span>La Lechera<span class="brand-pill-cat">Alimentos</span></span></div>
-      <div class="brand-pill"><span class="brand-dot"></span><span>Ramo<span class="brand-pill-cat">Alimentos</span></span></div>
-      <div class="brand-pill"><span class="brand-dot"></span><span>Editorial Unilit<span class="brand-pill-cat">Libros y Biblias</span></span></div>
-      <div class="brand-pill"><span class="brand-dot" style="background:var(--sage)"></span><span>Marcas de cuidado capilar<span class="brand-pill-cat">Belleza y cuidado personal</span></span></div>
+    <h2 class="h2">Marcas que ya <em>confiaron</em> en mí</h2>
+    <div class="brand-note">El tipo de contenido que más me buscan: productos de cocina y alimentación mostrados en el día a día de una mamá que trabaja desde casa. Mi hijo aparece consumiendo el producto de forma natural, dándole autenticidad y conexión real con otras familias.</div>
+    <div class="brands">
+      <div class="brand-pill"><span class="brand-dot"></span><span>Nestlé<span class="brand-cat">Alimentos</span></span></div>
+      <div class="brand-pill"><span class="brand-dot"></span><span>Klim Snacks<span class="brand-cat">Alimentos</span></span></div>
+      <div class="brand-pill"><span class="brand-dot"></span><span>La Lechera<span class="brand-cat">Alimentos</span></span></div>
+      <div class="brand-pill"><span class="brand-dot"></span><span>Ramo<span class="brand-cat">Alimentos</span></span></div>
+      <div class="brand-pill"><span class="brand-dot"></span><span>Editorial Unilit<span class="brand-cat">Libros y Biblias</span></span></div>
+      <div class="brand-pill"><span class="brand-dot" style="background:var(--sage)"></span><span>Cuidado capilar<span class="brand-cat">Belleza personal</span></span></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="section cta-section" style="background:var(--cream)">
   <div class="container">
     <div class="cta-inner">
       <span class="eyebrow">¿Trabajamos juntas?</span>
       <h2 class="cta-h2">Tu marca en el <em>día real</em> de una mamá que inspira</h2>
       <p class="cta-body">Si tu marca habla de familia, alimentación, fe, emprendimiento o cuidado personal, puedo integrarla de forma auténtica en mi contenido. Escríbeme por WhatsApp y hablamos sin compromiso.</p>
-      <a href="https://wa.me/573213786731?text=Hola%20Stephanny%2C%20soy%20de%20[nombre%20de%20marca]%20y%20me%20gustar%C3%ADa%20explorar%20una%20colaboraci%C3%B3n%20contigo." target="_blank" class="btn-wa">
+      <a href="https://wa.me/573213786731?text=Hola%20Stephanny%2C%20soy%20de%20[nombre%20de%20marca]%20y%20me%20gustar%C3%ADa%20explorar%20una%20colaboraci%C3%B3n%20contigo." target="_blank" rel="noopener" class="btn-wa">
         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.875L0 24l6.313-1.51A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.636-.49-5.153-1.346l-.369-.217-3.746.896.934-3.624-.24-.379A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Escribirle a Stephanny
       </a>
@@ -381,10 +353,12 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<footer class="footer-mini">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-    <p class="footer-mini-copy">© 2026 Una Mamá con Propósito S.A.S. · Hecho con amor desde Colombia 🇨🇴</p>
-    <a href="/" class="footer-mini-back">← Volver a la landing</a>
+<footer class="foot">
+  <div class="container">
+    <div class="foot-inner">
+      <p class="foot-copy">© 2026 Una Mamá con Propósito S.A.S. · Colombia 🇨🇴</p>
+      <a href="/" class="foot-back">← Volver a la landing</a>
+    </div>
   </div>
 </footer>
 
