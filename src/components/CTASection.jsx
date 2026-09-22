@@ -44,7 +44,7 @@ export default function CTASection() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="https://www.umpacademy.co"
+                href="https://academia.unamamaconproposito.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-salmon text-white font-medium text-base rounded-full hover:opacity-90 transition-opacity"

@@ -22,7 +22,7 @@ export default function Footer() {
               <p className="text-brand-brown font-semibold text-xs tracking-widest uppercase mb-4">El ecosistema</p>
               <ul className="space-y-2.5">
                 {[
-                  { label: 'UMP Academy', href: 'https://www.umpacademy.co' },
+                  { label: 'UMP Academy', href: 'https://academia.unamamaconproposito.co' },
                   { label: 'Mamá CEO', href: 'https://www.mamaceoapp.co' },
                   { label: 'Creanautas', href: null },
                 ].map((l) => (
@@ -71,7 +71,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.umpacademy.co" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-brand-brown text-sm transition-colors">
+                  <a href="https://academia.unamamaconproposito.co" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-brand-brown text-sm transition-colors">
                     UMP Academy
                   </a>
                 </li>
