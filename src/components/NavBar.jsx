@@ -41,7 +41,7 @@ export default function NavBar() {
         </nav>
 
         <a
-          href="https://wa.me/573152284352?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
+          href="https://wa.me/573181751966?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 border border-[#25D366] text-[#1aab4b] text-sm font-semibold rounded-full hover:bg-[#25D366] hover:text-white transition-colors duration-150"
@@ -86,7 +86,7 @@ export default function NavBar() {
             )
           })}
           <a
-            href="https://wa.me/573152284352?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
+            href="https://wa.me/573181751966?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}

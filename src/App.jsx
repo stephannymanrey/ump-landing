@@ -42,7 +42,7 @@ export default function App() {
         <div className="wa-lp-bubble">¿Tienes dudas? Hablemos 💬</div>
         <a
           className="wa-lp-btn"
-          href="https://wa.me/573152284352?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
+          href="https://wa.me/573181751966?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Escríbenos por WhatsApp"
