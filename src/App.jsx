@@ -35,14 +35,14 @@ export default function App() {
         .wa-lp-wrap{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
         .wa-lp-btn{width:60px;height:60px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wa-lp-in .5s ease .8s both,wa-lp-pulse 2.4s ease 1.4s infinite;transition:transform .18s;}
         .wa-lp-btn:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 24px rgba(37,211,102,.6);}
-        .wa-lp-bubble{background:#fff;color:#1a1a1a;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;padding:8px 14px;border-radius:16px 16px 4px 16px;box-shadow:0 3px 14px rgba(0,0,0,.13);white-space:nowrap;opacity:0;animation:wa-lp-bubble .4s ease 2.8s forwards;pointer-events:none;}
+        .wa-lp-bubble{background:#fff;color:#1a1a1a;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;padding:10px 14px;border-radius:16px 16px 4px 16px;box-shadow:0 3px 14px rgba(0,0,0,.13);max-width:220px;line-height:1.45;opacity:0;animation:wa-lp-bubble .4s ease 2.8s forwards;pointer-events:none;}
         .wa-lp-wrap:hover .wa-lp-bubble{opacity:1;animation:none;transition:opacity .2s;}
       `}</style>
       <div className="wa-lp-wrap">
-        <div className="wa-lp-bubble">¿Tienes dudas? Hablemos 💬</div>
+        <div className="wa-lp-bubble">¿Quieres usar nuestras apps sin pasar por el Discipulado? Solicita acceso aquí 💬</div>
         <a
           className="wa-lp-btn"
-          href="https://wa.me/573181751966?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20ecosistema%20UMP"
+          href="https://wa.me/573181751966?text=Hola%21+Quiero+solicitar+acceso+a+las+apps+de+UMP+sin+pasar+por+el+Discipulado.+%C2%BFMe+pueden+orientar%3F"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Escríbenos por WhatsApp"
